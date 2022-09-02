@@ -1,0 +1,81 @@
+@mixin flex($align, $justify, $dir) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  flex-direction: $dir;
+}
+
+.event {
+  display: block;
+  padding-top: 1rem;
+
+  &__title {
+    @include flex(flex-start, flex-start, column);
+    width: calc(100% - 3rem);
+    padding-left: 3rem;
+
+    .mat-form-field {
+      width: 100%;
+    }
+
+    input::placeholder {
+      font-size: 1.4rem !important;
+    }
+
+    button {
+      color: blue;
+      background-color: aqua;
+    }
+  }
+
+  &__search {
+    @include flex(flex-start, flex-start, column);
+    margin-top: 2rem;
+    width: calc(100% - 2rem);
+
+    &__date {
+      @include flex(center, flex-start, row);
+      width: 100%;
+      height: auto;
+
+      .mat-form-field {
+        margin-left: 2rem;
+        width: 100%;
+      }
+    }
+
+
+    &__btn {
+      margin-left: 3rem;
+      color: blue;
+      background: transparent;
+      border: none;
+      margin-top: 1rem;
+      cursor: pointer;
+
+    }
+
+    span {
+      margin-left: 3rem;
+      font-size: .7rem;
+      color: grey;
+    }
+
+
+  }
+
+  &__desc {
+    @include flex(flex-start, flex-start, row);
+    margin-top: 2rem;
+
+    p {
+      margin-left: 2rem;
+      font-size: .7rem;
+      color: grey;
+    }
+  }
+
+  .save_btn {
+    float: right;
+  }
+}

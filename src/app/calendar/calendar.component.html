@@ -1,0 +1,20 @@
+<h2>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h2>
+
+
+<button mat-button mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate">
+  prev</button>
+
+<button mat-button mwlCalendarNextView [view]="view" [(viewDate)]="viewDate">
+  next</button>
+
+<mat-toolbar class="main">
+  <button mat-button (click)="setEvent()">create</button>
+  <mat-card class="main__calendar">
+    <mat-calendar [(selected)]="viewDate"></mat-calendar>
+  </mat-card>
+  <div class="main__events">
+    <mwl-calendar-day-view [events]="calendarService.event$.value" [viewDate]="viewDate" [hourSegments]="1"
+      [dayStartHour]="dayStartHour" (eventClicked)="deleteEvent($event)" (eventTimesChanged)="eventTimesChanged($event)">
+    </mwl-calendar-day-view>
+  </div>
+</mat-toolbar>

@@ -1,0 +1,15 @@
+.main {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+
+  &__calendar {
+    width: 20%;
+  }
+
+  &__events {
+    width: 80%;
+    height: auto;
+  }
+}

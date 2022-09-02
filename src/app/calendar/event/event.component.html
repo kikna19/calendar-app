@@ -1,0 +1,23 @@
+<form [formGroup]="form" class="event">
+  <div class="event__title">
+    <mat-form-field>
+      <input id="title" matInput placeholder="add title" formControlName="title">
+    </mat-form-field>
+    <button mat-button mat-dialog-close>appointment</button>
+  </div>
+  <div class="event__search">
+    <div class="event__search__date">
+      <mat-icon>access_time</mat-icon>
+      <mat-form-field>
+        <input matInput formControlName="date">
+      </mat-form-field>
+    </div>
+    <span>time zone - not repeated</span>
+    <button class="event__search__btn" mat-dialog-close>search time</button>
+  </div>
+  <div class="event__desc">
+    <mat-icon>sort</mat-icon>
+    <p>add description or attachments</p>
+  </div>
+  <button [disabled]="form.invalid" mat-dialog-close class="save_btn" (click)="createEvent()" mat-button>save</button>
+</form>
